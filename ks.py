@@ -92,6 +92,17 @@ def cnn_model(input_data):
         y_pred = (y_pred > 0.5).astype(int)
         st.write('classification Report\n',classification_report(y_test,y_pred))
         print("--------------------------------------\n")
+        def make_prediction(img,model):
+             img=cv2.imread(img)
+             img=Image.fromarray(img)
+             img=img.resize((128,128))
+             img=np.array(img)
+             input_img = np.expand_dims(img, axis=0)
+             res = model.predict(input_img)
+             if res:
+                  print("Tumor Detected")
+             else:
+                  print("No Tumor")
 def dnn_model(input_data):
     print("Loading Dataset generation Intiated..")
     path = 'https://raw.githubusercontent.com/adityaiiitmk/Datasets/master/iris.csv'
