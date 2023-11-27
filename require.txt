@@ -1,0 +1,11 @@
+streamlit
+scikit-learn
+matplotlib
+pandas 
+opencv-python
+os
+numpy
+tensorflow
+PIL
+tqdm
+io
